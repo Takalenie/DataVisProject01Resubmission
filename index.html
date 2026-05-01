@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Data Explorer (Level 1)</title>
+  <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="page-header">
+
+  <h1>Poverty and it's Educational Impact </h1>
+  <p class="byline">By: Kate Schmidlin</p>
+  <p class="source">Data source: Our World in Data</p>
+  <p class="years">Years used: <span id="yearA">(set in data file)</span> and <span id="yearB">(set in data file)</span></p>
+
+  <div class="selection-options">
+    <label for="povertySelect"><strong>Poverty Line </strong></label>
+    <select id="povertySelect">
+      <option value="pct_below_3_per_day">% below $3/day</option>
+      <option value="pct_below_4_per_day">% below $4/day</option>
+      <option value="pct_below_5_per_day">% below $5/day</option>
+      <option value="pct_below_6_per_day">% below $6/day</option>
+      <option value="pct_below_7_per_day">% below $7/day</option>
+      <option value="pct_below_8_per_day">% below $8/day</option>
+      <option value="pct_below_9_per_day">% below $9/day</option>
+      <option value="pct_below_10_per_day">% below $10/day</option>
+    </select>
+  </div>
+
+  <div class="selection-options">
+    <span class="control-label"><strong>Choose Education Metric</strong></span>
+    <button id="btnLiteracy" class="toggle-btn active" type="button">Literacy rate</button>
+    <button id="btnPrimary" class="toggle-btn" type="button">Primary enrolment</button>
+  </div>
+
+  </header>
+  
+
+  <main class="grid">
+
+    <section class="card">
+      <h2>Poverty (% below threshold)</h2>
+      <p class="hint">Hover a country to see poverty + literacy. When brushed selection exists, non-selected countries fade.</p>
+      <div id="mapA" class="map-container"></div>
+    </section>
+
+    <section class="card">
+      <h2 id="mapBTitle">Literacy rate</h2>
+      <p class="hint">Hover a country to see poverty + literacy. When brushed selection exists, non-selected countries fade.</p>
+      <div id="mapB" class="map-container"></div>
+    </section>
+
+
+    <section class="card"> 
+      <h2 id="labelA">Histogram: Poverty</h2>
+      <p class="hint">Hover a bar to see its range/count. Drag (brush) on the chart to filter all views.</p>
+      <svg id="histA"></svg>
+    </section>
+
+    <section class="card">
+      <h2 id="labelB">Histogram: Education</h2>
+      <p class="hint">Hover a bar to see its range/count. Drag over data to filter all displays.</p>
+      <svg id="histB"></svg>
+    </section>
+
+    <section class="card card-wide">
+      <h2 id="scatterTitle">Scatterplot: Literacy Rate vs Poverty Rate</h2>
+      <p class="hint">Hover a point to see poverty + literacy. Drag over data to filter all displays.</p>
+      <svg id="scatter"></svg>
+    </section>
+
+  </main>
+
+  <div id="tooltip"></div>
+
+  <script src="js/d3.v6.min.js"></script> 
+  <script src="js/topojson.v3.js"></script>
+  <script src="js/maps.js"></script>
+  <script src="js/main.js"></script>
+
+</body> 
+</html> 
