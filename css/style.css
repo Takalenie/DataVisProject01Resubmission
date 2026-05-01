@@ -1,16 +1,22 @@
-body {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin: 0;
-  padding: 0;
-  background: #BC9585;
-  color: #f1cbba;
-}
+body { 
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+  margin: 0; 
+  padding: 0; 
+  background: #3b241c url("../BookOpen_3.jpg") top center / contain no-repeat fixed; 
+  background-size: 100% auto; 
+  background-position: top center; 
+  background-repeat: no-repeat; 
+  color: #f1cbba; }
 
 .page-header {
   text-align: center;
   padding: 16px 10px;
-  border-bottom: 20px solid #3b241c;
-  background: #45322E;
+  padding: 40px 10px;
+  background-image: url("../Library.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 12px solid #404230e6;
   border-radius: 6px;
   margin-bottom: 10px;
 }
