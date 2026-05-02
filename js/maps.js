@@ -35,7 +35,7 @@ function makeChoropleth(parentSelector, geoData, valueById, infoById, selectedId
 
   // Form each country (SVG paths)
   const paths = svg.selectAll('path')
-    .data(geoData.features)
+    .data(geoData.features.filter(d => d.properties?.name !== 'Antarctica'))
     .enter()
     .append('path')
     .attr('d', path)
