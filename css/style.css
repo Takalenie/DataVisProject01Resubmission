@@ -18,7 +18,7 @@ body {
   background-repeat: no-repeat;
   border-bottom: 12px solid #404230e6;
   border-radius: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .page-header h1 {
@@ -34,17 +34,19 @@ body {
 }
 
 .grid {
+  max-width: 1400px;
+  width: 95%;
+  margin: 0 auto;
+  transform: translateX(-30px);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding: 16px;
+  column-gap: 140px;
+  row-gap: 30px;
 }
 
 .card {
   text-align: center;
-  background: #f8e6de;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: #f7d8b2;
   padding: 12px;
   box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.15);
 }
