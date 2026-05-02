@@ -9,31 +9,47 @@ body {
   color: #f1cbba; }
 
 .page-header {
+  position: relative;
   text-align: center;
-  padding: 16px 10px;
+  padding: 40px 10px;
   padding: 40px 10px;
   background-image: url("../Library.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-bottom: 12px solid #404230e6;
-  border-radius: 6px;
-  margin-bottom: 20px;
+  border-radius: 0px;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.page-header * {
+  position: relative;
+  z-index: 1;
 }
 
 .page-header h1 {
   margin: 0 0 6px 0;
-  font-size: 24px;
+  font-size: 40px;
+  color: #f7e4d9;
+  text-shadow: 2px 2px 4px #000;
 }
 
 .byline, .source, .years {
   margin: 4px 0;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 14px;
-  color: #555;
+  font-size: 16px;
+  color: #ead3bd;;
 }
 
 .grid {
+  padding-top: 20px;
   max-width: 1400px;
   width: 95%;
   margin: 0 auto;
@@ -124,25 +140,30 @@ body {
   margin: 10px 0;
 }
 
-.selection-options label, /* Poverty Line and Education label styling */ 
-.selection-options-label {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 16px;
-  font-weight: 600;
+.selection-options label,
+.selection-options-label,
+.control-label {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px #000;
+  color: #f7e4d9;
 }
 
 select,
 .toggle-btn {
-  height: 38px;
-  padding: 0 15px;
+  height: 40px;
+  padding: 0 50px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 15px;
-  border-radius: 6px;
-  border: 1px solid #533930;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius:30px;
+  border: none;
+  outline: none;
   background-color: #0E2F4E;
   color: #f8e6de;
   cursor: pointer;
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 .toggle-btn.active { /* button clicked color */
