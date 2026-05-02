@@ -27,10 +27,9 @@ function makeChoropleth(parentSelector, geoData, valueById, infoById, selectedId
   const maxvalue = d3.max(values);
 
   // Colors! (aka: the fun part)
-  const colorScale = d3.scaleLinear()
+  const colorScale = d3.scaleSequential()
     .domain([minvalue, maxvalue])
-    .range(['#6b97a1', '#5D1B21']);
-
+    .interpolator(d3.interpolateRgb("#e6f0fa", "#0E2F4E"));
   // Is a subset of data selected?
   const activeSelection = selectedIdSet && selectedIdSet.size > 0;
 
@@ -52,7 +51,7 @@ function makeChoropleth(parentSelector, geoData, valueById, infoById, selectedId
       } 
 
       const value = valueById.get(id); 
-      if (value == null || Number.isNaN(value)) return '#d8cccc'; 
+      if (value == null || Number.isNaN(value)) return '#e2cca2'; 
 
       return colorScale(value); 
     })

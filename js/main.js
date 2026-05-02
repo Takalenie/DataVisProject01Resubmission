@@ -374,7 +374,13 @@ function drawHistogram(svgSelector, domainData, plotData, valKey, valLabel, oute
     .attr('width', d => Math.max(0, xvalScale(d.x1) - xvalScale(d.x0) - 1))
     .attr('height', d => height - yScale(d.count))
     .attr('fill', '#0E2F4E')
-    .attr('opacity', 0.85);
+    .attr('opacity', 0.85)
+    .on('mouseover', function () {
+        d3.select(this).attr('fill', '#2a649b');
+      })
+      .on('mouseout', function () {
+        d3.select(this).attr('fill', '#0E2F4E');
+      });
 
   // Show bin info when hovering over a bar
   bars.on('mouseover', (event, d) => {
@@ -488,7 +494,8 @@ function drawScatterplot(svgSelector, domainData, plotData, xKey, yKey, xLabel, 
     .attr('cx', d => xScale(d[xKey]))
     .attr('cy', d => yScale(d[yKey]))
     .attr('r', 4)
-    .attr('fill', '#5D1B21')
+    .attr('stroke', '#f8e6de')
+    .attr('stroke-width', 0.5)
     .attr('opacity', 0.75);
 
   // tooltip on hover (poverty % & selected education metric)

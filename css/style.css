@@ -120,6 +120,15 @@ body {
   font-weight: 600;
 }
 
+:root {
+  --primary-dark: #0E2F4E;
+  --secondary-blue: #2a649b;
+  --accent-light: #7293b3;
+  --paper-bg: #f7d8b2;
+  --text-dark: #45322E;
+  --highlight: #f7e4d9;
+}
+
 .map-container { /* container styling - MAPS */
   padding: 8px;
   width: 100%; 
